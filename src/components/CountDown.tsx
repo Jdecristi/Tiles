@@ -1,36 +1,37 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 //Styles
-import Styled, {keyframes} from 'styled-components';
+import Styled, { keyframes } from "styled-components";
 
 interface Props {
-    startGame: () => void;
+  startGame: () => void;
 }
 
-const CountDown: React.FC <Props> = ({startGame}) => {
-    //State 
-    let [timer, setTimer] = useState(3)
+const CountDown: React.FC<Props> = ({ startGame }) => {
+  //State
+  let [timer, setTimer] = useState(3);
 
-    let decriment = () => {
-        if(timer === 0){
-            startGame();
-        } else {
-            setTimeout(() =>{
-                setTimer(timer - 1)
-            }, 1000)
-        }
+  let decriment = () => {
+    if (timer === 0) {
+      startGame();
+    } else {
+      setTimeout(() => {
+        setTimer(timer - 1);
+      }, 1000);
     }
+  };
 
-    useEffect(() => {decriment()})
+  useEffect(() => {
+    decriment();
+  });
 
-    //Styles
-    const fadeOut = keyframes`
+  //Styles
+  const fadeOut = keyframes`
         from { opacity: 1;}
         to { opacity: 0;}
-    `
+    `;
 
-    const StyledTimer = Styled.div`
-        font-family: roboto;
+  const StyledTimer = Styled.div`
         font-size: 10vw;
         line-height: 10vw;
         height: 10vw;
@@ -45,11 +46,7 @@ const CountDown: React.FC <Props> = ({startGame}) => {
         animation-delay: 500ms;
     `;
 
-    return(
-        <StyledTimer>
-            {timer >= 1 ? timer : 1}
-        </StyledTimer>
-    )
-}
+  return <StyledTimer>{timer >= 1 ? timer : 1}</StyledTimer>;
+};
 
 export default CountDown;

@@ -1,8 +1,12 @@
+body {
+  font-family: sans-serif;
+}
+
 .tile {
   height: 5em;
   width: 5em;
   border-radius: 5em;
   background-color: #ffffff;
   border: none;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }

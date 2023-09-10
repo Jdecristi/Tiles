@@ -1,13 +1,13 @@
 //Styles
-import Styled from 'styled-components';
+import Styled from "styled-components";
+import "./index.css";
 
 //Components
-import Game from './components/Game';
-import { useEffect } from 'react';
+import Game from "./components/Game";
 
 const App: React.FC = () => {
   const StyledApp = Styled.div`
-    background: radial-gradient(circle, hsl(0, 0%, 0%),  hsl(0, 0%, 20%));
+    background: radial-gradient(circle, hsl(0, 0%, 0%),  hsl(241.15384615384616, 96.29629629629628%, 10.588235294117649%));
     position: fixed;
     top: 0;
     right: 0;
@@ -15,15 +15,11 @@ const App: React.FC = () => {
     left: 0;
   `;
 
-  useEffect(() => {
-    // createTiles();
-  }, [])
-
-    return (
-      <StyledApp id="app">
-        <Game />
-      </StyledApp>
-    )
-}
+  return (
+    <StyledApp id="app">
+      <Game />
+    </StyledApp>
+  );
+};
 
 export default App;
